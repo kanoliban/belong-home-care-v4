@@ -1,0 +1,94 @@
+/* Spacing adjustments for tighter layout */
+
+/* Reduce section padding */
+section {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* Reduce gap between cards */
+.gap-8 {
+  gap: 1.5rem !important;
+}
+
+.gap-12 {
+  gap: 2rem !important;
+}
+
+/* Reduce margin between sections */
+.space-y-8 > * + * {
+  margin-top: 1.5rem !important;
+}
+
+.space-y-16 > * + * {
+  margin-top: 3rem !important;
+}
+
+/* Reduce padding in cards */
+.p-8 {
+  padding: 1.5rem !important;
+}
+
+.p-12 {
+  padding: 2rem !important;
+}
+
+/* Adjust container max-width for better content density */
+.container {
+  max-width: 1280px !important;
+}
+
+/* Reduce margin bottom on headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.75rem !important;
+}
+
+/* Reduce spacing in hero sections */
+.py-16 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.py-24 {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.py-32 {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+/* Reduce spacing between text elements */
+.mb-4 {
+  margin-bottom: 0.75rem !important;
+}
+
+.mb-8 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mb-12 {
+  margin-bottom: 2rem !important;
+}
+
+.mb-16 {
+  margin-bottom: 3rem !important;
+}
+
+/* Adjust card spacing */
+.card-hover {
+  margin-bottom: 0 !important;
+}
+
+/* Reduce spacing in grid layouts */
+.grid {
+  margin-bottom: 1.5rem !important;
+}

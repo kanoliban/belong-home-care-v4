@@ -1,0 +1,121 @@
+/* Standardized spacing system */
+:root {
+  --space-xs: 0.25rem;  /* 4px */
+  --space-sm: 0.5rem;   /* 8px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 1.5rem;   /* 24px */
+  --space-xl: 2rem;     /* 32px */
+  --space-2xl: 3rem;    /* 48px */
+  --space-3xl: 4rem;    /* 64px */
+  
+  --section-spacing-mobile: var(--space-xl);
+  --section-spacing-tablet: var(--space-2xl);
+  --section-spacing-desktop: var(--space-3xl);
+  
+  --card-gap-mobile: var(--space-md);
+  --card-gap-tablet: var(--space-lg);
+  --card-gap-desktop: var(--space-xl);
+  
+  --container-padding-mobile: var(--space-md);
+  --container-padding-tablet: var(--space-lg);
+  --container-padding-desktop: var(--space-xl);
+}
+
+/* Section spacing */
+.section {
+  padding-top: var(--section-spacing-mobile);
+  padding-bottom: var(--section-spacing-mobile);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: var(--section-spacing-tablet);
+    padding-bottom: var(--section-spacing-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: var(--section-spacing-desktop);
+    padding-bottom: var(--section-spacing-desktop);
+  }
+}
+
+/* Container padding */
+.container {
+  padding-left: var(--container-padding-mobile);
+  padding-right: var(--container-padding-mobile);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--container-padding-tablet);
+    padding-right: var(--container-padding-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: var(--container-padding-desktop);
+    padding-right: var(--container-padding-desktop);
+  }
+}
+
+/* Card grid spacing */
+.card-grid {
+  display: grid;
+  gap: var(--card-gap-mobile);
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    gap: var(--card-gap-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid {
+    gap: var(--card-gap-desktop);
+  }
+}
+
+/* Vertical spacing utilities */
+.space-y-xs > * + * { margin-top: var(--space-xs); }
+.space-y-sm > * + * { margin-top: var(--space-sm); }
+.space-y-md > * + * { margin-top: var(--space-md); }
+.space-y-lg > * + * { margin-top: var(--space-lg); }
+.space-y-xl > * + * { margin-top: var(--space-xl); }
+.space-y-2xl > * + * { margin-top: var(--space-2xl); }
+.space-y-3xl > * + * { margin-top: var(--space-3xl); }
+
+/* Horizontal spacing utilities */
+.space-x-xs > * + * { margin-left: var(--space-xs); }
+.space-x-sm > * + * { margin-left: var(--space-sm); }
+.space-x-md > * + * { margin-left: var(--space-md); }
+.space-x-lg > * + * { margin-left: var(--space-lg); }
+.space-x-xl > * + * { margin-left: var(--space-xl); }
+.space-x-2xl > * + * { margin-left: var(--space-2xl); }
+.space-x-3xl > * + * { margin-left: var(--space-3xl); }
+
+/* Margin utilities */
+.mt-auto { margin-top: auto; }
+.mb-auto { margin-bottom: auto; }
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }
+
+/* Responsive padding adjustments for mobile */
+@media (max-width: 767px) {
+  .mobile-px-sm {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+  
+  .mobile-py-sm {
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+  }
+  
+  .mobile-p-sm {
+    padding: var(--space-sm);
+  }
+}

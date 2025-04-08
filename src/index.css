@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import our enhanced styles */
+@import './styles/main.css';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 30% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 30% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 30% 18%;
+    --primary: 217 61% 27%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 35 85% 59%;
+    --secondary-foreground: 217 61% 27%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 215 30% 18%;
+    --accent: 180 62% 27%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 217 61% 27%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: Arial, Helvetica, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    font-family: Georgia, serif;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply relative rounded-xl border-2 bg-card p-8 shadow-lg transition-all duration-300 hover:scale-102 hover:shadow-xl;
+    min-height: 280px;
+  }
+
+  .bento-card-expanded {
+    @apply fixed inset-4 z-50 mx-auto max-w-4xl overflow-y-auto rounded-xl border-2 bg-card p-8 shadow-2xl transition-all duration-300 md:inset-8;
+  }
+
+  .bento-card-label {
+    @apply absolute left-4 top-4 text-sm font-medium text-primary;
+  }
+
+  .bento-card-close {
+    @apply absolute right-4 top-4 cursor-pointer text-muted-foreground transition-colors hover:text-foreground;
+  }
+
+  .image-caption {
+    @apply text-sm text-gray-600 mt-2 italic;
+  }
+
+  .section-heading {
+    @apply text-2xl font-medium mb-4 georgia;
+  }
+
+  .availability-badge {
+    @apply bg-accent text-white px-4 py-2 rounded-full text-base font-medium shadow-md hover:shadow-lg transition-shadow;
+  }
+
+  .home-name {
+    @apply text-2xl font-medium georgia text-primary mb-2;
+  }
+}
+
+.georgia {
+  font-family: Georgia, serif;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gradient-peach {
+  background: linear-gradient(135deg, #F7F2E9 0%, #F0EAE0 100%);
+  border-color: #E5DFD5;
+  border-width: 3px;
+}
+
+.gradient-glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-color: #E5E7EB;
+  border-width: 3px;
+}
+
+.gradient-lavender {
+  background: linear-gradient(135deg, #E8ECF0 0%, #D8DFE5 100%);
+  border-color: #C5CDD5;
+  border-width: 3px;
+}
+
+.gradient-professional {
+  background: linear-gradient(135deg, #E8ECE8 0%, #D8DED8 100%);
+  border-color: #C5CCC5;
+  border-width: 3px;
+}
+
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+.letter-spacing-wide {
+  letter-spacing: 0.1em;
+}
+
+.btn-press:active {
+  transform: translateY(1px);
+}
+
+.btn-hover {
+  transition: all 0.3s ease;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-focus:focus {
+  box-shadow: 0 0 0 2px rgba(26, 59, 111, 0.2);
+}

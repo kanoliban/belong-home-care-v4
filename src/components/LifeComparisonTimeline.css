@@ -1,0 +1,93 @@
+/* Timeline animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(26, 59, 111, 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(26, 59, 111, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(26, 59, 111, 0);
+  }
+}
+
+.timeline-icon {
+  animation: pulse 2s infinite;
+}
+
+.timeline-icon:hover {
+  animation: none;
+  transform: scale(1.1);
+}
+
+/* Fade in animation for timeline blocks */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline-block-visible {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Gradient backgrounds */
+.bg-alone {
+  background-color: #f0f0f0;
+}
+
+.bg-belong {
+  background-color: #1A3B6F;
+}
+
+/* Text colors */
+.text-alone {
+  color: #555;
+}
+
+.text-belong {
+  color: #FFFFFF;
+}
+
+/* Timeline fill animation */
+.timeline-fill {
+  transition: height 0.5s ease-out;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+
+.sparkle {
+  display: inline-block;
+  animation: sparkle 2s infinite;
+  transform-origin: center;
+}
+
+.sparkle:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.sparkle:nth-child(3) {
+  animation-delay: 0.8s;
+}
