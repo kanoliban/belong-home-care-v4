@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import our enhanced styles */
-@import './styles/main.css';
-
+/* Custom Design Tokens & Base Layer */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -46,6 +44,7 @@
   }
 }
 
+/* Components Layer */
 @layer components {
   .bento-card {
     @apply relative rounded-xl border-2 bg-card p-8 shadow-lg transition-all duration-300 hover:scale-102 hover:shadow-xl;
@@ -81,6 +80,7 @@
   }
 }
 
+/* Utilities */
 .georgia {
   font-family: Georgia, serif;
 }

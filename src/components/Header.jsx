@@ -38,37 +38,41 @@ export function Header() {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            <Link to="/" className="text-3xl georgia text-primary hover:text-[#0f2a5c] transition-colors duration-300">belong.</Link>
+            <div className="flex-shrink-0">
+              <Link to="/" className="text-3xl georgia text-primary hover:text-[#0f2a5c] transition-colors duration-300">belong.</Link>
+            </div>
 
-            <nav className="hidden md:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.path}
-                  className={`text-base font-medium relative group ${location.pathname === item.path ? 'text-primary' : 'text-foreground/70 hover:text-primary'} transition-colors duration-300`}
+            <div className="flex items-center justify-end flex-1 space-x-8">
+              <nav className="hidden md:flex items-center space-x-8">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.path}
+                    className={`text-base font-medium relative group ${location.pathname === item.path ? 'text-primary' : 'text-foreground/70 hover:text-primary'} transition-colors duration-300`}
+                  >
+                    {item.label}
+                    {location.pathname === item.path && (
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"></span>
+                    )}
+                    {location.pathname !== item.path && (
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary rounded-full group-hover:w-full transition-all duration-300"></span>
+                    )}
+                  </Link>
+                ))}
+              </nav>
+
+              <div className="hidden md:block">
+                <button
+                  className="bg-accent text-white px-4 py-1.5 rounded-full text-base font-medium hover:bg-accent/90 transition-colors duration-300 cursor-pointer btn-press"
+                  onClick={() => setIsAvailabilityModalOpen(true)}
                 >
-                  {item.label}
-                  {location.pathname === item.path && (
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"></span>
-                  )}
-                  {location.pathname !== item.path && (
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary rounded-full group-hover:w-full transition-all duration-300"></span>
-                  )}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="hidden md:flex items-center">
-              <div
-                className="bg-accent text-white px-4 py-1.5 rounded-full text-base font-medium hover:bg-accent/90 transition-colors duration-300 cursor-pointer btn-press"
-                onClick={() => setIsAvailabilityModalOpen(true)}
-              >
-                3 Beds Available
+                  3 Beds Available
+                </button>
               </div>
             </div>
 
             <button
-              className="md:hidden"
+              className="md:hidden ml-4 flex-shrink-0"
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
             >
@@ -123,7 +127,7 @@ export function Header() {
           </motion.div>
         )}
       </header>
-      
+
       {/* Availability Modal */}
       <AvailabilityModal
         isOpen={isAvailabilityModalOpen}

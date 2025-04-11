@@ -10,7 +10,6 @@ const AboutPage = () => {
       <section className="bg-cream py-16 md:py-24 lg:py-32 px-4">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto space-y-8 text-center">
-            <span className="inline-block text-accent font-medium text-sm uppercase tracking-wider mb-2">About Us</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-primary leading-tight">
               Our Story
             </h1>

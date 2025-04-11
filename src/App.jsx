@@ -2,7 +2,6 @@ import React, { useEffect, Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
-import { Breadcrumbs } from "./components/Breadcrumbs";
 import BackToTop from "./components/BackToTop";
 import { ScheduleVisitModal } from "./components/ScheduleVisitModal";
 import { MakeReferralModal } from "./components/MakeReferralModal";
@@ -51,12 +50,6 @@ function App() {
       <Header />
 
       <main className="main-content">
-        {/* Show breadcrumbs on all pages except home */}
-        {location.pathname !== '/' && (
-          <div className="container mx-auto px-4 py-4">
-            <Breadcrumbs />
-          </div>
-        )}
 
         <Suspense fallback={
           <div className="flex items-center justify-center min-h-[50vh]">

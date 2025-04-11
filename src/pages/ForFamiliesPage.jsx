@@ -62,7 +62,7 @@ function ForFamiliesPage() {
       <section className="bg-cream py-10 md:py-16 lg:py-20 px-4">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto space-y-6 text-center">
-            <span className="inline-block text-accent font-medium text-sm uppercase tracking-wider mb-2">For Families</span>
+            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-primary leading-tight">
               Finding a place where your loved one truly belongs
             </h1>

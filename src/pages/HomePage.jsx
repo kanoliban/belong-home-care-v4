@@ -3,6 +3,8 @@ import { Hero } from "../components/Hero";
 import { BentoCard } from "../components/BentoCard";
 import { Contact } from "../components/Contact";
 import { RetractableCard } from "../components/RetractableCard";
+import BentoCardModal from "../components/BentoCardModal";
+import { AnimatePresence } from "framer-motion";
 import { Home, Car, Utensils } from "lucide-react";
 
 function HomePage() {
@@ -133,16 +135,23 @@ function HomePage() {
           <RetractableCard />
         </div>
 
-        <section className="grid gap-5 md:grid-cols-2 mb-16"> {/* Adjusted gap */}
+        <section className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 mb-16 container mx-auto px-4">
           {cards.map((card) => (
             <BentoCard
               key={card.id}
               {...card}
-              expanded={expandedCard === card.id}
               onExpand={() => setExpandedCard(card.id)}
-              onCollapse={() => setExpandedCard(null)}
             />
           ))}
+
+          <AnimatePresence>
+            {expandedCard && (
+              <BentoCardModal
+                {...cards.find(card => card.id === expandedCard)}
+                onClose={() => setExpandedCard(null)}
+              />
+            )}
+          </AnimatePresence>
         </section>
         <Contact />
       </div>

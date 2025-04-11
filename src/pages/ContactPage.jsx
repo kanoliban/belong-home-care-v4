@@ -76,7 +76,7 @@ function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block text-accent font-medium text-sm uppercase tracking-wider mb-2">Get In Touch</span>
+              
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-primary leading-tight">
                 Contact Us
               </h1>
